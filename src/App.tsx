@@ -5,7 +5,9 @@ function App() {
     <>
       <div>notes on kids / things i wish to know after having kids</div>
       {links.map((link) => (
-        <a href={link.url}>{link.title}</a>
+        <div>
+          <a href={link.url}>{link.title}</a>
+        </div>
       ))}
     </>
   );
