@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div>notes on kids / things i wish to know after having kids</div>
+      {links.map((link) => (
+        <a href={link.url}>{link.title}</a>
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+const links: Links[] = [
+  {
+    title: "Allergic Rhinitis",
+    url: "https://singhealth.blob.core.windows.net/kkh/Children/Allergic%20Rhinitis.pdf",
+  },
+  {
+    title: "Asthma in Children",
+    url: "https://singhealth.blob.core.windows.net/kkh/Children/Asthma%20in%20Children.pdf",
+  },
+  {
+    title: "Caring for Your Child after Ostomy Surgery",
+    url: "https://singhealth.blob.core.windows.net/kkh/Children/Caring%20for%20Your%20Child%20after%20Ostomy%20Surgery.pdf",
+  },
+  {
+    title: "Clean Hands Save Lives",
+    url: "https://singhealth.blob.core.windows.net/kkh/Children/Clean%20Hands%20Save%20Lives.pdf",
+  },
+  {
+    title: "Constipation in Children",
+    url: "https://singhealth.blob.core.windows.net/kkh/Children/Constipation%20in%20Children.pdf",
+  },
+];
+
+type Links = { title: string; url: string };
+
+export default App;
